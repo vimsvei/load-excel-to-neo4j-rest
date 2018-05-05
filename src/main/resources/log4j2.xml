@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration monitorInterval="3">
+    <Appenders>
+        <File name="FILE1" fileName="logs/Node.log">
+            <PatternLayout pattern="%d{ISO8601} [%-5p] (%F:%L) - %m%n"/>
+        </File>
+        <File name="FILE2" fileName="logs/Stream.log">
+            <PatternLayout pattern="%d{ISO8601} [%-5p] (%F:%L) - %m%n"/>
+        </File>
+        <File name="FILE3" fileName="logs/Relationship.log">
+            <PatternLayout pattern="%d{ISO8601} [%-5p] (%F:%L) - %m%n"/>
+        </File>
+        <File name="FILE4" fileName="logs/HttpConnector.log">
+            <PatternLayout pattern="%d{ISO8601} [%-5p] (%F:%L) - %m%n"/>
+        </File>
+        <File name="FILE5" fileName="logs/app.log">
+            <PatternLayout pattern="%d{ISO8601} [%-5p] (%F:%L) - %m%n"/>
+        </File>
+        <Console name="STDOUT" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+        </Console>
+    </Appenders>
+    <Loggers>
+        <Logger name="org.vimsvei.sfs.backlog.model.Node" level="all">
+            <AppenderRef ref="FILE1"/>
+        </Logger>
+        <Logger name="org.vimsvei.sfs.backlog.model.Stream" level="all">
+            <AppenderRef ref="FILE2"/>
+        </Logger>
+        <Logger name="org.vimsvei.sfs.backlog.model.Relationship" level="all">
+            <AppenderRef ref="FILE3"/>
+        </Logger>
+        <Logger name="org.vimsvei.sfs.backlog.http.HttpConnector" level="all">
+            <AppenderRef ref="FILE4"/>
+        </Logger>
+        <Logger name="org.vimsvei.App" level="all">
+            <AppenderRef ref="FILE5"/>
+        </Logger>
+
+        <!-- Root Logger -->
+        <Root level="all">
+            <AppenderRef ref="STDOUT"/>
+            <AppenderRef ref="FILE5"/>
+        </Root>
+    </Loggers>
+</Configuration>
